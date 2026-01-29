@@ -452,13 +452,12 @@ h1, h2, h3{
 }
 
 .landing-title{
-  margin: 0 auto;
+  margin: 0;
   font-size: 40px;
   font-weight: 900;
   color: #fff;
-  line-height: 1.1;
-  max-width: 500px;
 }
+
 
 .landing-subtitle{
   margin: 12px 0 0;
