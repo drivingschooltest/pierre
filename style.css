@@ -327,19 +327,19 @@ h1, h2, h3{
   min-height: 100vh;
   position: relative;
 
-  background-image: url("assets/PIE.jpeg");
+  background-image: url("assets/tem.jpeg");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; 
+  background-position: center top 40%;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  padding: 120px 18px 60px;   /* more top/bottom space */
+  padding: 90px 18px 40px;
   text-align:center;
   color: #fff;
 }
-
 
 .landing-location a {
   color: inherit !important;
@@ -409,7 +409,8 @@ h1, h2, h3{
   display: flex;
   justify-content: center;   /* 🔥 center horizontally */
   margin-top: 6px;
-  font-size: 16px;
+  white-space: nowrap;
+  font-size: 14px;
 }
 
 .landing-location a{
@@ -423,9 +424,10 @@ h1, h2, h3{
 }
 
 .loc-emoji{
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1;
   color: #ffffff;
+
 }
 
 .landing-phone{
@@ -434,21 +436,28 @@ h1, h2, h3{
 
 
 .glass{
-  margin-top: 0;              /* was -30px */
+  margin-top: 40px; /* increased space for logo */
   position: relative;
   z-index: 2;
 
   width: min(980px, 100%);
-  padding: 34px 28px;         /* more top padding */
+  padding: 26px 28px;
   border-radius: 26px;
 
   background: var(--glass);
+  backdrop-filter: blur(px);
+  -webkit-backdrop-filter: blur(px);
+
   box-shadow: var(--shadow);
 }
 
-
 .landing-title{
-  margin-top: 10px;  /* NEW */
+  margin: 0 auto;
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  max-width: 500px;
 }
 
 .landing-subtitle{
@@ -780,29 +789,33 @@ button, .choice, .btn, a {
   }
 }
 
-@media (max-width: 768px){
-  .landing-hero{
-    background-image: url("assets/uppie.jpeg");
-    min-height: 100svh;                /* better than 100vh on phones */
-    padding: 140px 14px 30px;          /* pushes content down */
-    background-position: center center/* move image up more on mobile */
+/* =========================
+   HERO LOGO (top center)
+========================= */
+.hero-logo {
+  position: absolute;
+  top: 24px;              /* distance from top */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;            /* above overlay */
+  pointer-events: auto;
+}
+
+.hero-logo img {
+  height: 180px;           /* desktop size - increased */
+  width: auto;
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-logo {
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .glass{
-    padding: 26px 16px;
-  }
-
-  .landing-title{
-    font-size: 30px;                   /* your mobile title (NOT hero-title) */
-    margin-top: 8px;
-  }
-
-  .landing-actions{
-    gap: 12px;
-  }
-
-  .landing-btn{
-    width: 100%;
-    min-width: 0;
+  .hero-logo img {
+    height: 130px;
   }
 }
