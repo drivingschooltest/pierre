@@ -327,19 +327,19 @@ h1, h2, h3{
   min-height: 100vh;
   position: relative;
 
-  background-image: url("assets/tem.jpeg");
-  background-size: cover;
+  background-image: url("assets/PIE.jpeg");
   background-repeat: no-repeat;
-  background-position: center top 40%;
+  background-position: center center; 
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  padding: 90px 18px 40px;
+  padding: 120px 18px 60px;   /* more top/bottom space */
   text-align:center;
   color: #fff;
 }
+
 
 .landing-location a {
   color: inherit !important;
@@ -387,7 +387,7 @@ h1, h2, h3{
 
 .landing-phone{
   margin: 8px 0 4px;
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 900;
   letter-spacing: 1px;
   color: rgba(255,255,255,.9);
@@ -396,18 +396,20 @@ h1, h2, h3{
 .landing-phone::after{
   content: " ☎ ";
   opacity: .85;
+  font-size: 11px;
 }
 
 .landing-phone::before{
   content: " ☎ ";
   opacity: .85;
+  font-size: 11px;
 }
 
 .landing-location{
   display: flex;
   justify-content: center;   /* 🔥 center horizontally */
   margin-top: 6px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .landing-location a{
@@ -432,26 +434,21 @@ h1, h2, h3{
 
 
 .glass{
-  margin-top: -30px; /* moves box up slightly */
+  margin-top: 0;              /* was -30px */
   position: relative;
   z-index: 2;
 
   width: min(980px, 100%);
-  padding: 26px 28px;
+  padding: 34px 28px;         /* more top padding */
   border-radius: 26px;
 
   background: var(--glass);
-  backdrop-filter: blur(px);
-  -webkit-backdrop-filter: blur(px);
-
   box-shadow: var(--shadow);
 }
 
+
 .landing-title{
-  margin: 0;
-  font-size: 40px;
-  font-weight: 900;
-  color: #fff;
+  margin-top: 10px;  /* NEW */
 }
 
 .landing-subtitle{
@@ -783,3 +780,29 @@ button, .choice, .btn, a {
   }
 }
 
+@media (max-width: 768px){
+  .landing-hero{
+    background-image: url("assets/uppie.jpeg");
+    min-height: 100svh;                /* better than 100vh on phones */
+    padding: 140px 14px 30px;          /* pushes content down */
+    background-position: center center/* move image up more on mobile */
+  }
+
+  .glass{
+    padding: 26px 16px;
+  }
+
+  .landing-title{
+    font-size: 30px;                   /* your mobile title (NOT hero-title) */
+    margin-top: 8px;
+  }
+
+  .landing-actions{
+    gap: 12px;
+  }
+
+  .landing-btn{
+    width: 100%;
+    min-width: 0;
+  }
+}
